@@ -1,0 +1,19 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" uiSref="home">AMOEBA</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav" *ngFor="let menu of menuList">
+        <li class="nav-item active">
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle" id="{{menu.name}}" data-toggle="dropdown">{{menu.name}}</a>
+            <div class="dropdown-menu">
+              <a *ngFor="let subMenu of menu.subMenu" class="dropdown-item" uiSref="{{subMenu.state}}">{{subMenu.name}}</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
