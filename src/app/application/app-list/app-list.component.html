@@ -7,7 +7,7 @@
   <div class="container pb-3">
     <div class="row">
       <div class="col">
-        <button type="button" name="button" class="btn btn-primary float-right"><i class="fa fa-plus mr-2"></i>New Application</button>
+        <button type="button" name="button" class="btn btn-primary float-right" uiSref=".create" [uiParams]="{insFlag:true}"><i class="fa fa-plus mr-2"></i>New Application</button>
       </div>
     </div>
   </div>
@@ -27,8 +27,8 @@
           <td>
             <div class="btn-group" role="group">
               <button type="button" name="button" class="btn btn-info btn-sm" uiSref=".detail" [uiParams]="{name:app.name.first}"><i class="fa fa-eye mr-2"></i>View</button>
-              <button type="button" name="button" class="btn btn-warning btn-sm"><i class="fa fa-pencil mr-2"></i>Edit</button>
-              <button type="button" name="button" class="btn btn-danger btn-sm"><i class="fa fa-trash mr-2"></i>Delete</button>
+              <button type="button" name="button" class="btn btn-warning btn-sm" uiSref=".edit" [uiParams]="{id:1,insFlag:false}"><i class="fa fa-pencil mr-2"></i>Edit</button>
+              <button type="button" name="button" class="btn btn-danger btn-sm" (click)="deleteData(app.name.first)"><i class="fa fa-trash mr-2"></i>Delete</button>
             </div>
           </td>
         </tr>

@@ -6,8 +6,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { state } from './app.states';
 import { uiRouterConfig } from './config/router';
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import 'rxjs/add/operator/toPromise';
-
 import { AppService } from './application/shared/app.service';
 
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import { AppListComponent } from './application/app-list/app-list.component';
 import { AppDetailComponent } from './application/app-detail/app-detail.component';
 import { HostDetailComponent } from './host/host-detail/host-detail.component';
 import { AppFormComponent } from './application/app-form/app-form.component';
+import { ModalComponent } from './shared/modal/modal.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AppFormComponent } from './application/app-form/app-form.component';
     AppListComponent,
     AppDetailComponent,
     HostDetailComponent,
-    AppFormComponent
+    AppFormComponent,
+    ModalComponent
   ],
   imports: [
     FormsModule,
@@ -42,7 +44,11 @@ import { AppFormComponent } from './application/app-form/app-form.component';
         useHash:true,
         config:uiRouterConfig
       }
-    )
+    ),
+    BootstrapModalModule
+  ],
+  entryComponents: [
+    ModalComponent
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

@@ -1,3 +1,21 @@
-<p>
-  app-form works!
-</p>
+<div class="container">
+  <h1>Application Form</h1>
+  <p>Add Application</p>
+</div>
+<hr>
+<div class="">
+  <form>
+    <div class="form-group">
+      <label for="appName">Application Name</label>
+      <input type="text" name="appName" class="form-control" [(ngModel)]="appData.name" placeholder="Enter Applcation Name">
+    </div>
+    <div class="form-group">
+      <label for="appName">Description</label>
+      <textarea name="appDescription" rows="8" class="form-control" [(ngModel)]="appData.description" placeholder="Enter Application Description"></textarea>
+    </div>
+    <div class="form-group">
+      <button type="button" name="button" class="btn btn-primary" (click)="createData()">Submit</button>
+    </div>
+  </form>
+  {{appData | json}}
+</div>
